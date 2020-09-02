@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<link rel="stylesheet" href="{{ asset('/css/posts.css') }}">
-<link rel="stylesheet" href="{{ asset('/css/common.css') }}">
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 @extends('layouts.common')
 @section('title','NEW POST')
 @section('contents')
@@ -49,8 +45,6 @@
 
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="POST!">
-
-                    <body></body>
             </form>
         </div>
     </div>

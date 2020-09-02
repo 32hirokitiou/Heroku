@@ -8,7 +8,7 @@
 @endif
 
 <div class="topWrapper">
-    <img src="/storage/user/{{ $authUser->image_path }}" class="editThumbnail">
+    <img src="{{ $authUser->image_path }}" class="editThumbnail">
 
     <div class="profiledetailEdit">
         <form method="post" action="{{ route('user.userUpdate') }}" enctype="multipart/form-data">

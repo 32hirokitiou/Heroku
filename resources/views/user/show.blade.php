@@ -8,7 +8,7 @@
 <div class="topWrapper">
     @if(!empty($post->user->image_path))
     <!-- <td><a href="{{ action('PostsController@edit', ['id' => $post->id]) }}"><img src="{{ asset('storage/image/'.$post->image_path)}}"> </td> -->
-    <td><a href="{{ action('UserController@userShow', ['id' => $post->id]) }}"><img src="/storage/user/{{ $post->user->image_path }}" class="editThumbnail"></td></a>
+    <td><a href="{{ action('UserController@userShow', ['id' => $post->id]) }}"><img src="{{ $post->user->image_path }}" class="editThumbnail"></td></a>
     @else
     画像なし→ここにデフォでuserID1のデフォ画像を表示させる
     @endif
@@ -42,7 +42,7 @@
 <div class="topWrapper">
     @if(!empty($post->user->image_path))
     <!-- <td><a href="{{ action('PostsController@edit', ['id' => $post->id]) }}"><img src="{{ asset('storage/image/'.$post->image_path)}}"> </td> -->
-    <td><a href="{{ action('UserController@userShow', ['id' => $post->id]) }}"><img src="/storage/user/{{ $post->user->image_path }}" class="editThumbnail"></a></td>
+    <td><a href="{{ action('UserController@userShow', ['id' => $post->id]) }}"><img src="{{ $post->user->image_path }}" class="editThumbnail"></a></td>
     @else
     <p>画像が未設定です。</p>
     @endif

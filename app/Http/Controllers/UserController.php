@@ -7,11 +7,11 @@ use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Storage;
 // use App\Http\Controllers\Validator
 // 下記追加分
 use Validator;
 use Intervention\Image\ImageManagerStatic as Image;
-use Illuminate\Support\Facades\Storage;
 
 
 class UserController extends Controller

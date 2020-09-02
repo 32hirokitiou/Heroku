@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<link rel="stylesheet" href="{{ asset('/css/posts.css') }}">
-<link rel="stylesheet" href="{{ asset('/css/common.css') }}">
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 @extends('layouts.common')
 @section('title','TAG')
 @section('contents')
@@ -10,7 +6,7 @@
     @foreach($tag->posts as $post)
     <section class="card-list">
         <a class="card-link">
-            <figure class="card-figure"><a href="/posts/{{ $post->id }}"><img src="{{ asset('storage/image/'.$post->image_path)}}"></a></figure>
+            <figure class="card-figure"><a href="/posts/{{ $post->id }}"><img src="{{ $post->image_path}}"></a></figure>
             <h2 class="card-title">{{ \Str::limit($post->title, 100) }}</h2>
             <h2 class="card-title">
                 @if ($auth_user->id != $post->user->id)
@@ -27,7 +23,7 @@
                 <p class="myitem-name">MyITEM</p>
                 @endif
             </h2>
-            <p class="card-text-tax"><a href="{{ action('UserController@show', ['post' => $post]) }}"> <img src="{{ asset('storage/user/'.$post->user->image_path)}}" method="post" class="thumbnail"></p>
+            <p class="card-text-tax"><a href="{{ action('UserController@show', ['post' => $post]) }}"> <img src="{{$post->user->image_path}}" method="post" class="thumbnail"></p>
             <h2 class="created_at">{{ $post->created_at->format('Y/m/d') }}</h2>
         </a>
     </section>

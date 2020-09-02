@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<link rel="stylesheet" href="{{ asset('/css/posts.css') }}">
-<link rel="stylesheet" href="{{ asset('/css/common.css') }}">
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
 @extends('layouts.common')
 @section('contents')
-
-
 <a href="{{ action('PostsController@add') }}" role="button" class="btn btn-primary">新規作成</a>
 
 <div id="cardlayout-wrap-detail">
 
     <section class="card-list">
         <a class="card-link">
-            <figure class="card-figure"><a href="{{ action('PostsController@edit', ['id' => $post->id]) }}"><img src="{{ asset('storage/image/'.$post->image_path)}}"></figure>
+            <figure class="card-figure"><a href="{{ action('PostsController@edit', ['id' => $post->id]) }}"><img src="{{ $post->image_path }}"></figure>
             <h2 class="card-title">{{ \Str::limit($post->title, 100) }}</h2>
         </a>
         <div>

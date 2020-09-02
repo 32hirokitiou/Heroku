@@ -68,10 +68,10 @@ class PostsController extends Controller
 		// $formは画面から飛んできたパラメーターが格納されている配列
 		// フォームから画像が送信されてきたら、保存して、$news->image_path に画像のパスを保存する
 		if (isset($form['image'])) {
-			$path = $request->file('image')->store('public/image');
+			$path = Storage::disk('s3')->putFile('/', $form['image'], 'public');
 			//DBにはファイルをそのまま保存しない
 			//ファイル名だけ保存している
-			$post->image_path = basename($path);
+			$post->image_path = Storage::disk('s3')->url($path);
 		} else {
 			$post->image_path = null;
 		}
@@ -130,8 +130,8 @@ class PostsController extends Controller
 		// 既存のコード16
 		if (isset($form['image'])) {
 			// isset — 変数が宣言されていること、そして NULL とは異なることを検査する
-			$path = $request->file('image')->store('public/image');
-			$post->image_path = basename($path);
+			$path = Storage::disk('s3')->putFile('/', $form['image'], 'public');
+			$post->image_path = Storage::disk('s3')->url($path);
 			unset($form['image']);
 			// unset関数は、定義した変数の割当を削除する関数です。
 		} elseif (isset($request->remove)) {
