@@ -23,12 +23,12 @@
 
 # Requirement
 
-PHP 7.3.11
-Laravel Framework 5.8.38
-mysql Ver 14.14 Distrib 5.7.31
-Heroku
-→(AWSに移行中)
-AWS S3
+*PHP 7.3.11
+*Laravel Framework 5.8.38
+*mysql Ver 14.14 Distrib 5.7.31
+*Heroku
+*→(AWSに移行中)
+*AWS S3
  
 # Author
 
