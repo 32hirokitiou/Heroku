@@ -6,7 +6,9 @@
 
     <section class="card-list">
         <a class="card-link">
-            <figure class="card-figure"><a href="{{ action('PostsController@edit', ['id' => $post->id]) }}"><img src="{{ $post->image_path }}"></figure>
+            <figure class="card-figure">
+                <a href="{{ action('PostsController@edit', ['id' => $post->id]) }}"><img src="{{ $post->image_path }}">
+            </figure>
             <h2 class="card-title">{{ \Str::limit($post->title, 100) }}</h2>
         </a>
         <div>

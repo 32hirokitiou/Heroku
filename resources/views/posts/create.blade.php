@@ -31,7 +31,6 @@
                         TAG
                     </label>
 
-
                     <label class="col-md-10">
                         <div class="form-text text-info">
                             @foreach ($tags as $tag)
@@ -45,6 +44,7 @@
 
                     {{ csrf_field() }}
                     <input type="submit" class="btn btn-primary" value="POST!">
+                </div>
             </form>
         </div>
     </div>
