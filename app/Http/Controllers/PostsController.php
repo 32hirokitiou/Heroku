@@ -13,7 +13,7 @@ use Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 
-//ユーザー情報を受け渡ししている
+
 class PostsController extends Controller
 {
 	public function add()

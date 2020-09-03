@@ -2,15 +2,18 @@
 @section('title','PROFILE')
 @section('contents')
 <link rel="stylesheet" href="{{ asset('/css/font.css') }}">
+
+
 <p class=page-title>PROFILE</p>
 @if ($user->id == $post->user->id )
 <!-- 本人だったら編集画面リンクありを表示させる -->
 <div class="topWrapper">
     @if(!empty($post->user->image_path))
-    <!-- <td><a href="{{ action('PostsController@edit', ['id' => $post->id]) }}"><img src="{{ asset('storage/image/'.$post->image_path)}}"> </td> -->
-    <td><a href="{{ action('UserController@userShow', ['id' => $post->id]) }}"><img src="{{ $post->user->image_path }}" class="editThumbnail"></td></a>
-    @else
-    画像なし→ここにデフォでuserID1のデフォ画像を表示させる
+    <td>
+        <a href="{{ action('UserController@userShow', ['id' => $post->id]) }}">
+            <img src="{{ $post->user->image_path }}" class="editThumbnail">
+        </a>
+    </td>
     @endif
     <div class="profileDate">
         <div class="labelTitle">Name</div>
@@ -42,9 +45,11 @@
 <div class="topWrapper">
     @if(!empty($post->user->image_path))
     <!-- <td><a href="{{ action('PostsController@edit', ['id' => $post->id]) }}"><img src="{{ asset('storage/image/'.$post->image_path)}}"> </td> -->
-    <td><a href="{{ action('UserController@userShow', ['id' => $post->id]) }}"><img src="{{ $post->user->image_path }}" class="editThumbnail"></a></td>
-    @else
-    <p>画像が未設定です。</p>
+    <td>
+        <a href="{{ action('UserController@userShow', ['id' => $post->id]) }}">
+            <img src="https://theaging.s3-ap-northeast-1.amazonaws.com/{{ $post->user->image_path }}" class="editThumbnail">
+        </a>
+    </td>
     @endif
     <div class="profileDate">
         <div class="labelTitle">名前</div>
@@ -53,10 +58,16 @@
         </div>
 
         <div class="labelTitle">自己紹介</div>
-        @if($errors->has('name'))<div class="error">{{ $errors->first('name') }}</div>@endif
+        @if($errors->has('name'))
+        <div class="error">{{ $errors->first('name') }}</div>
+        @endif
         <div>
             <td class="userForm">{{ $post->user->comment }}</td>
-            @if($errors->has('comment'))<div class="error">{{ $errors->first('comment') }}</div>@endif
+            @if($errors->has('comment'))
+            <div class="error">
+                {{ $errors->first('comment') }}
+            </div>
+            @endif
         </div>
 
         <div class="buttonSet">
