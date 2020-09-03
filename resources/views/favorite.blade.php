@@ -16,7 +16,7 @@
     <section class="card-list">
         <a class="card-link">
             <figure class="card-figure">
-                <a href="/posts/{{ $post->id }}"><img src="{{ asset('storage/image/'.$post->image_path)}}">
+                <a href="/posts/{{ $post->id }}"><img src="{{ $post->image_path }}">
             </figure>
             <h2 class="card-title">{{ \Str::limit($post->title, 100) }}</h2>
             <h2 class="card-title">
@@ -36,7 +36,7 @@
 
             </h2>
             <p class="card-text-tax">
-                <a href="{{ action('UserController@show', ['post' => $post]) }}"> <img src="{{ asset('storage/user/'.$post->user->image_path)}}" method="post" class="thumbnail">
+                <a href="{{ action('UserController@show', ['post' => $post]) }}"> <img src="{{ $post->user->image_path }}" method="post" class="thumbnail">
             </p>
             <h2 class="created_at">{{ $post->created_at->format('Y/m/d') }}</h2>
         </a>
