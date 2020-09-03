@@ -44,10 +44,9 @@
 
 <div class="topWrapper">
     @if(!empty($post->user->image_path))
-    <!-- <td><a href="{{ action('PostsController@edit', ['id' => $post->id]) }}"><img src="{{ asset('storage/image/'.$post->image_path)}}"> </td> -->
     <td>
         <a href="{{ action('UserController@userShow', ['id' => $post->id]) }}">
-            <img src="https://theaging.s3-ap-northeast-1.amazonaws.com/{{ $post->user->image_path }}" class="editThumbnail">
+            <img src="{{ $post->user->image_path }}" class="editThumbnail">
         </a>
     </td>
     @endif
