@@ -26,6 +26,9 @@ class PostsController extends Controller
 	{
 		$user = Auth::user();
 		$posts = Post::where('user_id', $user->id)->paginate(3);
+		dd($posts);
+		//本人の情報を$userとしてユーザー情報取得
+		// ポストのuser_idとログイン中のidが一致しているものを$postsとしておく
 		return view('posts.show', ['posts' => $posts, 'user' => $user]);
 	}
 
@@ -38,22 +41,6 @@ class PostsController extends Controller
 		}
 		$user = Auth::user();
 		return view('posts.showdetail', ['post' => $post, 'user' => $user]);
-	}
-
-	//テスト用
-	public function test(Request $request)
-	{
-		$title = $request->title;
-		if ($title != '') {
-			// 検索されたら検索結果を取得する
-			//画像も表示したい
-			$posts = Post::where('title', $title)->get();
-		} else {
-			// それ以外はすべてのニュースを取得する
-			$posts = Post::all();
-		}
-		$user = User::all();
-		return view('posts.test', ['posts' => $posts, 'title' => $title, 'user' => $user]);
 	}
 
 	// 以下を追記

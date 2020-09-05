@@ -41,15 +41,13 @@
 <div class="alert alert-success">{{ session('success') }}</div>
 @endif
 
-
 <div class="topWrapper">
-    @if(!empty($post->user->image_path))
     <td>
         <a href="{{ action('UserController@userShow', ['id' => $post->id]) }}">
             <img src="{{ $post->user->image_path }}" class="editThumbnail">
         </a>
     </td>
-    @endif
+
     <div class="profileDate">
         <div class="labelTitle">名前</div>
         <div>

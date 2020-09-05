@@ -28,15 +28,24 @@ class UserController extends Controller
 
     public function userShow(Request $request)
     {
+        $auth_user = Auth::user();
         $post = Post::find($request->id);
         //requestで受け取ったポストのid情報からPostの情報自体を取得する
         $user = User::find($post->user_id);
-        //その後そのポスト情報にあるuser_idからユーザーの情報を取得
         $posts = $user->posts;
-        $auth_user = Auth::user();
-        $postsa = Post::paginate(3);
-        //そこからユーザーに紐づいているpostsを取得しuserShowに$postsとして送る
-        return view('user.userShow', ['posts' => $posts, 'auth_user' => $auth_user, 'postsa' => $postsa]);
+
+        //$userのidを抜き出す
+        //$userのidが持っているポストを表示させたい
+        //これをwhereを使ってかくべし！
+        // $posts = Post::where('user_id', $user->id)->paginate(3);
+        //その後そのポスト情報にあるuser_idからユーザーの情報を取得
+        // $posts = $user->posts
+        //ここで先程のユーザーのポストの情報を$postsにおいている。
+        //今回これを取り出したい
+        //Requestの中に入っている
+        //本人の情報を$userとしてユーザー情報取得
+        // ポストのuser_idとログイン中のidが一致しているものを$postsとしておく
+        return view('user.userShow', ['posts' => $posts, 'auth_user' => $auth_user,]);
     }
 
 
