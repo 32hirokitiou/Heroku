@@ -22,10 +22,10 @@ class PostsController extends Controller
 		return view('posts.create', ['tags' => $tags]);
 	}
 
-	public function show(Request $request)
+	public function show()
 	{
-		$posts = Auth::user()->posts;
 		$user = Auth::user();
+		$posts = Post::where('user_id', $user->id)->paginate(3);
 		return view('posts.show', ['posts' => $posts, 'user' => $user]);
 	}
 
@@ -97,18 +97,9 @@ class PostsController extends Controller
 
 	public function index(Request $request)
 	{
-		$title = $request->title;
-		if ($title != '') {
-			// 検索されたら検索結果を取得する
-			//画像も表示したい
-			$posts = Post::where('title', $title)->get();
-		} else {
-			// それ以外はすべてのニュースを取得する
-			$posts = Post::all();
-		}
 		$auth_user = Auth::user();
 		$posts = Post::paginate(3);
-		return view('posts.index', ['posts' => $posts, 'title' => $title, 'auth_user' => $auth_user,]);
+		return view('posts.index', ['posts' => $posts, 'auth_user' => $auth_user,]);
 	}
 
 	public function edit(Request $request)

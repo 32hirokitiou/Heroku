@@ -14,8 +14,6 @@ class Post extends Model
   // 以下を教材から追加
   protected $guarded = ['id', 'tags'];
 
-
-
   public static $rules = [
     'title' => 'required',
     'image' => 'required|image|mimes:jpeg,png,jpg,gif|dimensions:max_width=5000,',
@@ -24,7 +22,6 @@ class Post extends Model
   public static $rules_edit = [
     'title' => 'required',
   ];
-
 
 
   // Postモデルに関連付けを行う
