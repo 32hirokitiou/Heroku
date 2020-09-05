@@ -34,8 +34,9 @@ class UserController extends Controller
         //その後そのポスト情報にあるuser_idからユーザーの情報を取得
         $posts = $user->posts;
         $auth_user = Auth::user();
+        $postsa = Post::paginate(3);
         //そこからユーザーに紐づいているpostsを取得しuserShowに$postsとして送る
-        return view('user.userShow', ['posts' => $posts, 'auth_user' => $auth_user,]);
+        return view('user.userShow', ['posts' => $posts, 'auth_user' => $auth_user, 'postsa' => $postsa]);
     }
 
 
