@@ -39,4 +39,5 @@
     </section>
     @endforeach
 </div>
+<p>{{ $posts->links() }}</p>
 @endsection

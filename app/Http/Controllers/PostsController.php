@@ -107,6 +107,8 @@ class PostsController extends Controller
 			$posts = Post::all();
 		}
 		$auth_user = Auth::user();
+		$posts = Post::paginate(3);
+
 		return view('posts.index', ['posts' => $posts, 'title' => $title, 'auth_user' => $auth_user,]);
 	}
 
