@@ -82,7 +82,7 @@ class PostsController extends Controller
 	public function index(Request $request)
 	{
 		$auth_user = Auth::user();
-		$posts = Post::paginate(3);
+		$posts = Post::paginate(6);
 		return view('posts.index', ['posts' => $posts, 'auth_user' => $auth_user,]);
 	}
 
