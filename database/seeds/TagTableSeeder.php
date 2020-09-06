@@ -63,6 +63,36 @@ class TagTableSeeder extends Seeder
         $tag->save();
 
         $tag = new \App\Tag([
+            'name' => '#ブーツ',
+        ]);
+        $tag->save();
+
+        $tag = new \App\Tag([
+            'name' => '#サンダル',
+        ]);
+        $tag->save();
+
+        $tag = new \App\Tag([
+            'name' => '#スリッポン',
+        ]);
+        $tag->save();
+
+        $tag = new \App\Tag([
+            'name' => '#チロリアンブーツ',
+        ]);
+        $tag->save();
+
+        $tag = new \App\Tag([
+            'name' => '#デッキシューズ',
+        ]);
+        $tag->save();
+
+        $tag = new \App\Tag([
+            'name' => '#モカシン',
+        ]);
+        $tag->save();
+
+        $tag = new \App\Tag([
             'name' => '#黒',
         ]);
         $tag->save();
@@ -113,6 +143,11 @@ class TagTableSeeder extends Seeder
         $tag->save();
 
         $tag = new \App\Tag([
+            'name' => '#NOWAX',
+        ]);
+        $tag->save();
+
+        $tag = new \App\Tag([
             'name' => '#使用後1年未満',
         ]);
         $tag->save();
@@ -144,6 +179,16 @@ class TagTableSeeder extends Seeder
 
         $tag = new \App\Tag([
             'name' => '#特殊革',
+        ]);
+        $tag->save();
+
+        $tag = new \App\Tag([
+            'name' => '#レザーソール',
+        ]);
+        $tag->save();
+
+        $tag = new \App\Tag([
+            'name' => '#ラバーソール',
         ]);
         $tag->save();
     }

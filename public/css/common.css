@@ -79,11 +79,11 @@ display: inline;
 .tag-text {
 display:flex;
 flex-wrap: wrap;
-width: 70%;
+width: 90%;
 padding: 100px;
 margin: 0 auto;
 font-style: oblique;
-align-items:space-around：
+justify-content: center;
 }
 
 .tag-tex tag-info {
