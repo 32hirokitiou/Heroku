@@ -5,26 +5,27 @@
 
 
 <p class=page-title>PROFILE</p>
-@if ($user->id == $post->user->id )
+@if ($authuser->id == $user->id )
+
 <!-- 本人だったら編集画面リンクありを表示させる -->
 <div class="topWrapper">
-    @if(!empty($post->user->image_path))
+
     <td>
-        <a href="{{ action('UserController@userShow', ['id' => $post->id]) }}">
-            <img src="{{ $post->user->image_path }}" class="editThumbnail">
+        <a href="{{ action('UserController@userShow', ['id' => $user->id]) }}">
+            <img src="{{ $user->image_path }}" class="editThumbnail">
         </a>
     </td>
-    @endif
+
     <div class="profileDate">
         <div class="labelTitle">Name</div>
         <div>
-            <td class="userForm">{{ $post->user->name }}</td>
+            <td class="userForm">{{ $user->name }}</td>
         </div>
 
         <div class="labelTitle">自己紹介</div>
         @if($errors->has('name'))<div class="error">{{ $errors->first('name') }}</div>@endif
         <div>
-            <td class="userForm">{{ $post->user->comment }}</td>
+            <td class="userForm">{{ $user->comment }}</td>
             @if($errors->has('comment'))<div class="error">{{ $errors->first('comment') }}</div>@endif
         </div>
 
@@ -36,6 +37,7 @@
 </div>
 
 @else
+
 <!-- 本人でなければ編集リンクなしを表示させる -->
 @if (session('success'))
 <div class="alert alert-success">{{ session('success') }}</div>
@@ -43,15 +45,15 @@
 
 <div class="topWrapper">
     <td>
-        <a href="{{ action('UserController@userShow', ['id' => $post->id]) }}">
-            <img src="{{ $post->user->image_path }}" class="editThumbnail">
+        <a href="{{ action('UserController@userShow', ['id' => $user->id]) }}">
+            <img src="{{ $user->image_path }}" class="editThumbnail">
         </a>
     </td>
 
     <div class="profileDate">
         <div class="labelTitle">名前</div>
         <div>
-            <td class="userForm">{{ $post->user->name }}</td>
+            <td class="userForm">{{ $user->name }}</td>
         </div>
 
         <div class="labelTitle">自己紹介</div>
@@ -59,7 +61,7 @@
         <div class="error">{{ $errors->first('name') }}</div>
         @endif
         <div>
-            <td class="userForm">{{ $post->user->comment }}</td>
+            <td class="userForm">{{ $user->comment }}</td>
             @if($errors->has('comment'))
             <div class="error">
                 {{ $errors->first('comment') }}

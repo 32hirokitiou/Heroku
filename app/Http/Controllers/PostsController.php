@@ -26,9 +26,6 @@ class PostsController extends Controller
 	{
 		$user = Auth::user();
 		$posts = Post::where('user_id', $user->id)->paginate(3);
-		dd($posts);
-		//本人の情報を$userとしてユーザー情報取得
-		// ポストのuser_idとログイン中のidが一致しているものを$postsとしておく
 		return view('posts.show', ['posts' => $posts, 'user' => $user]);
 	}
 

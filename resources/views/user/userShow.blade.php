@@ -24,11 +24,11 @@
                 {!! Form::close() !!}
                 @endif
                 @endif
-
             </h2>
-            <p class="card-text-tax"><a href="{{ action('UserController@show', ['post' => $post]) }}"> <img src="{{ $post->user->image_path }}" method="post" class="thumbnail"></p>
+            <p class="card-text-tax"><a href="{{ action('UserController@show', ['id' => $post->user_id]) }}"> <img src="{{ $post->user->image_path }}" method="post" class="thumbnail"></p>
         </a>
     </section>
     @endforeach
 </div>
+<p>{{ $posts->links() }}</p>
 @endsection
