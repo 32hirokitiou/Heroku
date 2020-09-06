@@ -34,9 +34,7 @@
                     <label class="col-md-10">
                         <div class="form-text text-info">
                             @foreach ($tags as $tag)
-
                             <label><input type="checkbox" class="tagname" name="tags[]" value="{{ $tag->id }}">{{ $tag->name }}</label>
-
                             @endforeach
                         </div>
                     </label>

@@ -32,7 +32,9 @@
                 @endif
 
             </h2>
-            <p class="card-text-tax"><a href="{{ action('UserController@show', ['id' => $post->user_id]) }}"> <img src="{{ $post->user->image_path }}" method="post" class="thumbnail"></a></p>
+            <p class="card-text-tax">
+                <a href="{{ action('UserController@show', ['id' => $post->user_id]) }}"> <img src="{{ $post->user->image_path }}" method="post" class="thumbnail"></a>
+            </p>
             <h2 class="created_at">{{ $post->created_at->format('Y/m/d') }}</h2>
         </a>
 
