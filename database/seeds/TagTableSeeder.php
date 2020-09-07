@@ -63,32 +63,32 @@ class TagTableSeeder extends Seeder
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#ブーツ',
+            'name' => '#ブーツ',
         ]);
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#サンダル',
+            'name' => '#サンダル',
         ]);
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#スリッポン',
+            'name' => '#スリッポン',
         ]);
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#チロリアンブーツ',
+            'name' => '#チロリアンブーツ',
         ]);
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#デッキシューズ',
+            'name' => '#デッキシューズ',
         ]);
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#モカシン',
+            'name' => '#モカシン',
         ]);
         $tag->save();
 
@@ -138,17 +138,17 @@ class TagTableSeeder extends Seeder
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#鏡面磨き',
+            'name' => '#鏡面磨き',
         ]);
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#NOWAX',
+            'name' => '#NOWAX',
         ]);
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#使用後1年未満',
+            'name' => '#使用後1年未満',
         ]);
         $tag->save();
 
@@ -158,37 +158,47 @@ class TagTableSeeder extends Seeder
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#使用後5年未満',
+            'name' => '#使用後5年未満',
         ]);
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#新品',
+            'name' => '#新品',
         ]);
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#起毛素材',
+            'name' => '#起毛素材',
         ]);
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#エナメル',
+            'name' => '#エナメル',
         ]);
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#特殊革',
+            'name' => '#特殊革',
         ]);
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#レザーソール',
+            'name' => '#レザーソール',
         ]);
         $tag->save();
 
         $tag = new \App\Tag([
-            'name' => '#ラバーソール',
+            'name' => '#ラバーソール',
+        ]);
+        $tag->save();
+
+        $tag = new \App\Tag([
+            'name' => '#old',
+        ]);
+        $tag->save();
+
+        $tag = new \App\Tag([
+            'name' => '#new',
         ]);
         $tag->save();
     }
