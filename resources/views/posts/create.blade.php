@@ -28,7 +28,7 @@
 
                 <div class="form-group row">
                     <label class="col-md-2" for="tags">
-                        TAG
+                        TAGaaaaaaaaaaaaaa
                     </label>
 
                     <label class="col-md-10">
